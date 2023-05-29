@@ -3,6 +3,9 @@
 int main()
 {
     int count, num1, num2;
+    
+    std::cin.tie(NULL);
+    ios_base::sync_with_stdio(false);
 
     std::cin >> count;
 
