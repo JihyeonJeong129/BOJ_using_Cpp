@@ -15,7 +15,6 @@ int main()
 
     count = count + 1;
 
-
     for(int i = 1; i < 10; i++){
         
         std::cin >> input_num;
@@ -23,12 +22,14 @@ int main()
         for(int j = 0; j < count; j++){
             
             if((input_num % 42) == mod_arr[j]){
-                continue;
+                goto JUMP;
             }
         }
 
         mod_arr[count++] = (input_num % 42); 
-
+        
+JUMP:
+        continue;
     }
 
     std::cout << count << std::endl;
