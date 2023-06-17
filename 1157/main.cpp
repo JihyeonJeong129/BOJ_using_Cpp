@@ -21,27 +21,40 @@ int main()
         }
     }
 
+    
 //find max value
     
     int max_index;
     int max_val = -1;
+    int count;
 
     for(int i = 0; i < sizeof(arr)/sizeof(int); i++){
+        
         if(arr[i] > max_val){
             
+            count = 0;
             max_val = arr[i];
             max_index = i;
         }
 
         else if(arr[i] == max_val && arr[i] != 0){
-            std::cout << "?" << std::endl;
-            exit(0);
+            
+            count = count + 1;
         }
     }
 
-    char result = max_index + 'A';
+//check depulication 
 
-    std::cout << result;
-    
+    if(count > 0){
+        std::cout << "?";
+    }
+
+    else{
+        
+        char result = max_index + 'A';
+
+        std::cout << result;
+    }
+        
     return 0;
 }
