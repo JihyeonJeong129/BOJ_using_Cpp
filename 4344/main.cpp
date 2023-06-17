@@ -34,7 +34,7 @@ int main()
         std::cout.precision(5);
         std::cout.setf(std::ios::showpoint);
 
-        std::cout << (double)local_count / (double)count * 100 << "%";
+        std::cout << (double)local_count / (double)count * 100 << "%" << std::endl;
 
         delete arr;
 
