@@ -15,8 +15,6 @@ int main()
         std::cin >> str;
 
         int flag_arr[26] = {0, };
-
-        
         
         for(int j = 0; j < str.size();){
 
@@ -29,11 +27,6 @@ int main()
             while(true){
                 
                 if(comp != str[j]){
-                    
-                    break;
-                }
-
-                if(j >= str.size()){
                     
                     break;
                 }
