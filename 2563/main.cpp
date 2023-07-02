@@ -4,7 +4,7 @@ int main()
 {
     int count;
 
-    int area_count;
+    int area_count = 0;
 
     int paper[101][101];
 
@@ -19,8 +19,6 @@ int main()
             paper[i][j] = 0;
         }
     }
-
-    std::cout << area_count;
 
     for(int i = 0; i < count; i++){
         
