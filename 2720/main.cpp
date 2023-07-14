@@ -14,6 +14,9 @@ int main()
 
         std::cin >> amount;
 
+        if(amount > 1000)
+            amount = amount % 1000;
+
         quarter = amount / 25;
         amount = amount % 25;
 
@@ -26,7 +29,7 @@ int main()
         penny = amount;
 
 
-        std::cout << quarter << " " << dime << " " << nickel << " " << penny;
+        std::cout << quarter << " " << dime << " " << nickel << " " << penny << std::endl;
     }
 
 
