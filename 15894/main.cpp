@@ -2,7 +2,7 @@
 
 int main()
 {
-    int n;
+    unsigned long  n;
 
     std::cin >> n;
 
