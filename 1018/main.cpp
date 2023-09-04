@@ -6,8 +6,16 @@ int main()
 
     std::cin >> m >> n;
 
-    char board[51][51];
+    //memory allocation
 
+    char **board = new char*[n];
+
+    for(int i = 0; i < n; i++){
+        
+        board[i] = new char[m];
+    }
+
+    //Get input data
     for(int i = 0; i < m; i++){
         
         for(int j = 0; j < n; j++){
@@ -15,6 +23,12 @@ int main()
             std::cin >> board[i][j];
         }
     }
+
+
+    /*
+    Transrate Black -> 0 / White -> 1 
+    to use logical Operator
+    */
 
     for(int i = 0; i < m; i++){
         
@@ -32,14 +46,24 @@ int main()
         }
     }
 
+
+
     int count_min = 10000;
 
     char temp_board[8][8];
+
+    /*
+    Count change color at 8X8 size board.
+    */
 
     for(int i = 0; i <= m-8; i++){
 
         for(int j = 0; j <= n-8; j++){
             
+            /*
+            Copy 8X8 part to temp_board
+            */
+
             for(int k = 0; k < 8; k++){
 
                 for(int l = 0; l < 8; l++){
@@ -86,11 +110,7 @@ int main()
                 
                 count_min = count;
 
-//                std::cout << "Count min is " << count_min << std::endl;
             }
-
-//            std::cout << "count is " << count << std::endl;
-
         }
     }
 

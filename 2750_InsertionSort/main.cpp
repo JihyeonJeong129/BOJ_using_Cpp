@@ -13,33 +13,21 @@ int main()
         
         std::cin >> arr[i];
     }
+
 //Insertion Sort Start
     for(int i = 1; i < n; i++){
         
-        if(arr[i-1] > arr[i]){
+        int j;
+
+        int temp = arr[i];
+
+        for(j = i - 1; temp < arr[j] && j >= 0; j--){
             
-            int temp;
-            
-            int j = i;
+            arr[j+1] = arr[j]; // shifting
+        }
 
-            temp = arr[i];
-
-            do{
-                j--;  
-            } while((arr[i] < arr[j]) && j>0);
-
-            if(arr[j] < arr[i]){
-                j = j + 1;
-            }
-
-
-            for(int k = i; k >= j; k--){
-                
-                arr[k] = arr[k-1];
-            }
-
-            arr[j] = temp;
-         }
+        arr[j+1] = temp;
+    
     }
 
 //Print Sorting result
