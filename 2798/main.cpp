@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdlib>
 
 int main()
 {
@@ -15,7 +14,7 @@ int main()
 
 	int a,b,c; //save location of 3-cards
 
-	int near_num = 1000;
+	int near_num = -1;
 
 	a = -1, b = -1, c = -1; // a,b,c initialize
 
@@ -27,20 +26,22 @@ int main()
 
 			for(int k = j+1; k <= n - 1; k++){
 				
-				if((m - arr[i] - arr[j] - arr[k]) < near_num && 
-					(m - arr[i] - arr[j] - arr[k]) >= 0){
+				int temp = arr[i] + arr[j] + arr[k];
+
+				if(temp <= m && near_num < temp){
 					
 					a = i;
 					b = j;
 					c = k;
+					
+					near_num = temp;
 
-					near_num = std::abs(m - arr[i] - arr[j] - arr[k]);
 				}
 			}
 		}
 	}
 
-	std::cout << (m - near_num) << std::endl;
+	std::cout << near_num << std::endl;
 
 	return 0;
 }

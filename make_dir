@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read name
+
+mkdir $name
+
+mv Makefile $name/ 
+
+exit 0
