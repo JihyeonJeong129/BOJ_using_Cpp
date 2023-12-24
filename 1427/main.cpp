@@ -8,18 +8,16 @@ bool desc(int a, int b){
 
 int main()
 {
-    char num[10];
 
-    long long num_temp;
+	std::string str;
 
-    std::cin >> num_temp;
+    std::cin >> str;
 
-    num = to_string(num_temp);
+    std::sort(str.begin(), str.end(), desc);
 
-    std::sort(num, num+10, desc);
-
-    for(int i = 0; i < 10; i ++){
-        std::cout << num[i] << std::endl;
+    for(int i = 0; i < str.length(); i ++){
+        
+		std::cout << str[i];
     }
     
 
