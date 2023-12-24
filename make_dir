@@ -4,6 +4,8 @@ read name
 
 mkdir $name
 
-mv Makefile $name/ 
+cp Makefile $name/ 
+
+touch /home/fosyl/boj/$name/main.cpp
 
 exit 0
