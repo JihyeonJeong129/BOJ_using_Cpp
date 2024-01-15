@@ -48,14 +48,8 @@ count init value is 0, if insert same key value->count increase 1
 
 		std::cin >> num;
 
-		if(data.find(num) != data.end()){
-			
-			std::cout << data[num] << " ";
-		}
-
-		else{
-			std::cout << "0 ";
-		}
+		std::cout << data[num] << " ";
+		
 	}
 
 	return 0;
