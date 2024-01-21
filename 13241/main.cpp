@@ -14,7 +14,7 @@ int euclidean_algorithm(int num1, int num2){
 
 int main()
 {
-	int num1, num2;
+	long long int num1, num2;
 
 	std::cin >> num1 >> num2;
 
