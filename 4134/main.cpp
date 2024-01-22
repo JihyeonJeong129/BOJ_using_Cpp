@@ -38,8 +38,6 @@ int main()
 		}
 
 //general case
-		num = num + 1;
-
 		while(true){
 			if(check_primenum(num)){
 				std::cout << num << "\n";
