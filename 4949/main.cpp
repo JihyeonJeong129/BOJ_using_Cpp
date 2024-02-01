@@ -2,6 +2,46 @@
 #include <stack>
 #include <string>
 
+bool match(char input)
+{
+	if(input)
+}
+
+bool check(std::string str)
+{
+	int i;
+
+	std::stack<char> data;
+
+	for(i = 0; i < str.length(); i++){
+		if(str[i] == '(' || str[i] == '['){
+			data.push(str[i]);
+		}
+
+		else if(str[i] == ')'){
+			if(data.empty() || data.top() != '('){
+				return false;
+			}
+
+			else
+				data.pop();
+		}
+//short circuit eval
+		else if(str[i] == ']'){
+			if(data.empty() || data.top() != '['){
+				return false;
+			}
+
+			else
+				data.pop();
+		}
+	}
+
+	return data.empty();
+
+
+}
+
 int main()
 {
 	std::string str;
@@ -10,48 +50,16 @@ int main()
 		
 		getline(std::cin, str);
 
-		std::stack<char> data;
-
 		if(str == "."){
 			break;
 		}
 
-		int i;
+		if(check(str))
+			std::cout << "yes" << "\n";
 
-		for(i = 0; i < str.length(); i++){
-			if(str[i] == '(' || str[i] == '['){
-				data.push(str[i]);
-			}
+		else
+			std::cout << "no" << "\n";
 
-			else if(str[i] == ')'){
-				if(data.empty() || data.top() != '('){
-					std::cout << "no" << "\n";	
-					break;
-				}
-
-				else
-					data.pop();
-			}
-//short circuit eval
-			else if(str[i] == ']'){
-				if(data.empty() || data.top() != '['){
-					std::cout << "no" << "\n";
-					break;
-				}
-
-				else
-					data.pop();
-			}
-		}
-
-		if(i == str.length()){
-			if(data.empty()){
-				std::cout << "yes" << "\n";
-			}
-			else{
-				std::cout << "no" << "\n";
-			}
-		}
 	}
 
 	return 0;
