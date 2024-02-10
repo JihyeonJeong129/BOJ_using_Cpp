@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 int main()
 {
@@ -6,9 +7,5 @@ int main()
 
 	std::cin >> num;
 
-	int *data = new int[num+1];
-
-	for(int i = 1; i <= num; i++){
-	}
-
+	std::cout << (int)sqrt(num) << "\n";
 }
