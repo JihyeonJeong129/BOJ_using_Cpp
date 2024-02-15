@@ -17,18 +17,14 @@ unsigned long long combination(int n, int r)
 {
 	unsigned long long result = 1;
 
-	int fact = r;
+	int fact = 1;
 
 	for(int i = n; i >= n-r+1; i--){
-		result = result * i;
-
-		if(result%fact == 0){
-			result = result/fact;
-			fact--;
-		}
+		result = result * i/fact;
+		fact++;
 	}
 
-	result = result/factorial(fact);
+	//result = result/factorial(fact);
 
 	return result;
 }
