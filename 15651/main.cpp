@@ -2,26 +2,22 @@
 #include <algorithm>
 #include <vector>
 
-std::vector<int> data;
-
-int n,m;
-
-void printStack()
+void printStack(std::vector<int> &stack)
 {
-	std::for_each(data.begin(), data.end(), [](const int n){std::cout << n << ' ';});
+	std::for_each(stack.begin(), stack.end(), [](const int n){std::cout << n << ' ';});
 	std::cout << "\n";
 }
 
-void backtrack(int iter)
+void backtrack(std::vector<int> &stack, int iter, int n, int m)
 {
-	if(data.size() == m)
-		printStack();
+	if(stack.size() == m)
+		printStack(stack);
 	
 	else{
 		for(int i = iter; i<=n; i++){
-			data.push_back(i);
-			backtrack(iter);
-			data.pop_back();
+			stack.push_back(i);
+			backtrack(stack, iter, n, m);
+			stack.pop_back();
 		}
 	}
 	
@@ -33,9 +29,13 @@ int main()
 	std::cin.tie(NULL);
 	std::cout.tie(NULL);
 
+	std::vector<int> data;
+	
+	int n,m;
+
 	std::cin >> n >> m;
 
-	backtrack(1);
+	backtrack(data, 1, n, m);
 
 	return 0;
 }
