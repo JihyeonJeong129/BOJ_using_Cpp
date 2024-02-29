@@ -17,8 +17,7 @@ int main()
 //data insertion
 	for(int i=0; i<num; i++){
 		
-		std::cin >> arr[i];
-		
+		std::cin >> arr[i];		
 		sum = sum + arr[i];
 	}
 
@@ -30,9 +29,8 @@ int main()
 
 	std::cout << arr[num/2] << "\n";
 
-//print max_count value
-
-	int *max_count = new int[8001];
+//count how much each value come out
+	int *max_count = new int[8001]; // value range (-4000 ~ 4000)
 
 	std::memset(max_count, 0, 8001);
 
@@ -42,8 +40,6 @@ int main()
 
 	int max = 0;
 	int idx = -1;
-
-	int max_count_bool = 0;
 
 //find max_val
 	for(int i=-4000; i<=4000; i++){
@@ -60,10 +56,14 @@ int main()
 		}
 	}
 
+	delete[] max_count;
+
 	std::cout << idx << "\n";
 
 //print range of value
 	std::cout << arr[num-1] - arr[0] << std::endl;
+
+	delete[] arr;	
 
 	return 0;
 }
