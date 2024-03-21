@@ -3,22 +3,22 @@
 
 int main()
 {
-	int n,m;
+	long n,m;
 
 	std::cin >> n >> m;
 
-	int *data = new int[n];
+	long *data = new long[n];
 
 	for(int i=0; i<n; i++)
 		std::cin >> data[i];
 	
 	std::sort(data, data+n);
 
-	int max = data[n-1];
+	long max = data[n-1];
 
-	int init = 0;
+	long init = 1;
 
-	int end = max;
+	long end = max;
 
 	long long mid, tree_amount;
 
@@ -26,7 +26,7 @@ int main()
 
 	while(true){
 		
-		if(init >= end)
+		if(init > end)
 			break;
 
 		mid = (init + end)/2;
@@ -40,6 +40,7 @@ int main()
 
 		if(tree_amount < m)
 			end = mid-1;
+
 		else{
 			ans = std::max(ans, mid);
 			init = mid+1;
