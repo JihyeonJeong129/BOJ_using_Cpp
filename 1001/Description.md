@@ -1,20 +1,20 @@
 
-<h1>[BOJ #1000] A+B
+<h1>[BOJ #1001] A-B
 
 
-<h2>Study date: 2024-08-13
+<h2>Study date: 2024-08-14
 
 
 ## 문제 출처
 
-[BAEKJOON Online Judge #1000](https://www.acmicpc.net/problem/1000)
+[BAEKJOON Online Judge #1001](https://www.acmicpc.net/problem/1001)
 
 
 
 ## 문제
 
 
-두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
+두 정수 A와 B를 입력받은 다음, A-B를 출력하는 프로그램을 작성하시오.
 
 
 <br>
@@ -44,7 +44,7 @@
 입력
 
 ```python
-1 2
+3 2
 
 ```
 
@@ -53,8 +53,7 @@
 출력
 
 ```python
-3
-
+1
 ```
 
 <br>

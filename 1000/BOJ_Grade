@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for test_case in {0..0}
+do
+	echo "Testcase ${test_case} Start!"
+	./main.out < ./testcase/test${test_case}.txt > ./testcase/output${test_case}.txt;
+	diff -i -w -sq ./testcase/output${test_case}.txt ./answer/answer${test_case}.txt;
+	rm -f ./testcase/output${test_case}.txt
+done
+

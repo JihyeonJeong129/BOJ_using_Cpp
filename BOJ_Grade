@@ -1,0 +1,11 @@
+#!/bin/sh
+
+testcase = 1
+
+for test_case in {1..10}
+do
+	echo "Testcase ${test_case} Start!"
+	./main.out testcase/test${test_case}.txt;
+	diff output_${test_case}.text ../answer/answer${test_case}.txt -sq
+done
+
